@@ -3,6 +3,12 @@ h1 {
 	background-color: #E2D6FD;
 }
 
+.topuga img{
+	width: 200px;
+	height: 200px;
+}
+
+
 .git-img a{
 	width: 32px;
 	height: 32px;
@@ -10,7 +16,7 @@ h1 {
 	margin: auto;
 }
 
-.intro-container {
+.title-container {
 	background-color: #E2D6FD;
 	border: 1px solid #000000;
 	padding: 10px;
@@ -18,7 +24,7 @@ h1 {
 	border-radius: 5px;
 }
 
-.intro-title {
+.title {
 	text-align: center;
 	font-weight: bold;
 	color: #000000;
@@ -42,3 +48,10 @@ h1 {
   margin-right: auto;
 }
 
+.sentence-box {
+  background-color: #DFF1FF;
+  border: 0px solid #000000;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 2px;
+}
