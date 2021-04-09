@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/blogstyle.css">
+	</head>
+
+	<body>
+		<header>
+			<h1><span class="under">Programming</span></h1>
+		</header>
+
+		<main>
+			<section id="main_content" class="inner">
+				<h2> Bashでfactorialを書いた </h2>
+				<time>2021-04-09</time>
+				<p>
+				いつも朝も昼も食欲なくて、昼休み気晴らしに散歩しに行くのですが、最近全く歩く気になれない日があって、変わりにbashでAOJの問題でも解いてみようと思いfactorialのプログラムを書きました。</br>
+				Scalaで末尾再帰について学んだことを思い出しました。懐かしいです。</br>
+				今回解いた問題は<a href="https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0019&lang=ja" target="_blank">ここ</a>にあります。</br>
+				コードは以下のような感じです。</br>
+				<pre><code>
+#!/usr/bin/env bash
+
+function cond() {
+  [[ $1 -ge 1 && $1 -le 20 ]]
+}
+
+function factorial() {
+  function loop() {
+    if [ $(($1-1)) -eq 1 ]; then
+      echo $(($1 * $2))
+      exit 0
+    fi
+      loop $(($1-1)) $(($1*$2))
+  }
+  loop "$1" 1
+}
+
+function unsatified_cond_error() {
+  printf "Input Number 1 to 20"
+  exit 1;
+}
+
+read -r n
+cond "$n" || unsatified_cond_error && factorial "$n"
+				</code></pre>
+				若干設計を意識して、仕様をちゃんと満たすように書きました。</br>
+				条件満たしてたら計算して、それ以外はexitコード1で返すみたいな簡単な設計です。</br>
+				たまにAtCoderとかAOJみたいな問題解いてみるのも、少し気晴らしになって楽しいですね。
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+				<script> hljs.initHighlightingOnLoad(); </script>
+				</p>
+			</section>
+		</main>
+	</body>
+
+</html>
+

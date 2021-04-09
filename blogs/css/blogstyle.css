@@ -12,7 +12,6 @@ h1 {
 	background: linear-gradient(transparent 75%, #C7B2D6 70%);
 }
 
-
 #main_content {
 	padding-top: 20px;
 }
@@ -28,7 +27,11 @@ h1 {
 	margin: 0 auto;
 }
 .inner h2 {
+	text-align: center;
 	margin-bottom: 10px
+}
+.inner p {
+	margin-top: 5px;
 }
 
 ul {
@@ -41,3 +44,16 @@ ul {
     padding-inline-start: 20px;
 }
 
+time {
+	opacity: 0.5;
+}
+
+pre {
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 5px;
+  background: #25292f;
+  color: #fff;
+  white-space: pre-wrap;
+  max-width: 640px;
+}
